@@ -16,11 +16,11 @@ Ovaj projekat je kompletan **PHP + MySQL sajt** za prodaju fudbalskih karata. Sa
 
 ---
 
-## 📂 Struktura projekta
+## 📁 Struktura projekta
 
 PhpSqlSajt/
 ├── index.php → Početna strana sajta
-├── admin.php → Admin panel za upravljanje kartama i korisnicima
+├── admin.php → Admin panel za karte i korisnike
 ├── login.php → Login forma za korisnike
 ├── registracija.php → Forma za registraciju korisnika
 ├── ins_registracija.php → Backend za registraciju (upis u bazu)
@@ -48,13 +48,14 @@ PhpSqlSajt/
 ├── README.md → Ovaj fajl (opis projekta)
 
 ├── Stilovi (CSS):
-│ ├── a.css → Stil za "O nama" stranicu
+│ ├── a.css → Stil za stranicu "O nama"
 │ ├── b.css → Stil za admin sekciju
 │ ├── korpa.css → Stil za prikaz korpe
 │ ├── kupi.css → Stil za checkout stranicu
 │ ├── index.css → Glavni stil sajta
 │ ├── contact.css → Stil za kontakt stranicu
-│ ├── registracija.css → Stil za registraciju
+│ ├── registracija.css → Stil za registraciju korisnika
+
 ---
 
 ## 🛠️ Instalacija

@@ -18,44 +18,43 @@ Ovaj projekat je kompletan **PHP + MySQL sajt** za prodaju fudbalskih karata. Sa
 
 ## 📂 Struktura projekta
 
-/PhpSqlSajt/
-├── index.php ← Početna strana sajta
-├── admin.php ← Admin panel za karte i korisnike
-├── login.php ← Login forma za korisnike
-├── registracija.php ← Forma za registraciju korisnika
-├── ins_registracija.php ← Procesiranje registracije
-├── proveriUser.php ← Proverava korisničke podatke (login backend)
-├── session_checker.php ← Provera sesije (da li je korisnik ulogovan)
+PhpSqlSajt/
+├── index.php → Početna strana sajta
+├── admin.php → Admin panel za upravljanje kartama i korisnicima
+├── login.php → Login forma za korisnike
+├── registracija.php → Forma za registraciju korisnika
+├── ins_registracija.php → Backend za registraciju (upis u bazu)
+├── proveriUser.php → Provera login podataka korisnika
+├── session_checker.php → Provera sesije (ulogovani korisnik)
 
-├── korpa.php ← Prikaz sadržaja korisničke korpe
-├── ins.php ← Dodavanje karata u korpu
-├── izmeni.php ← Izmena količine u korpi
-├── obrisi.php ← Brisanje pojedinačnih stavki iz korpe
-├── isprazni.php ← Prazni celu korpu
+├── korpa.php → Prikaz sadržaja korisničke korpe
+├── ins.php → Dodavanje karata u korpu
+├── izmeni.php → Izmena količine u korpi
+├── obrisi.php → Brisanje pojedinačnih stavki iz korpe
+├── isprazni.php → Praznjenje cele korpe
 
-├── kupi.php ← Slanje podataka sa korpe preko Formspree maila
+├── kupi.php → Slanje podataka iz korpe na email (Formspree)
 
-├── conn.php ← Konekcija sa MySQL bazom
-├── liverpool.sql ← Dump baze (importovati u phpMyAdmin)
+├── conn.php → Konekcija sa MySQL bazom
+├── liverpool.sql → Dump baze (za import u phpMyAdmin)
 
-├── contact.html ← Kontakt stranica (frontend)
-├── about.html ← Stranica "O nama"
-├── logOut.php ← Odjava korisnika
-├── test_sesija.php ← Testiranje sesije / korisničkog pristupa
+├── about.html → Informacije o sajtu (stranica "O nama")
+├── contact.html → Kontakt stranica (frontend)
+├── logOut.php → Odjava korisnika
+├── test_sesija.php → Testiranje pristupa i sesije
 
-├── /slike/ ← Folder sa slikama
-├── /vscode/ ← VS Code podešavanja
-├── README.md ← Ovaj dokument
+├── slike/ → Folder sa slikama (logo, UI elementi)
+├── vscode/ → VS Code podešavanja (automatski folder)
+├── README.md → Ovaj fajl (opis projekta)
 
-├── Stilovi:
-│ ├── a.css ← Stil za "about" stranicu
-│ ├── b.css ← Stil za admin deo
-│ ├── korpa.css ← Stil za prikaz korpe
-│ ├── kupi.css ← Stil za checkout stranicu
-│ ├── index.css ← Glavni stil sajta
-│ ├── contact.css ← Stil za kontakt stranicu
-│ ├── registracija.css ← Stil za registraciju
-
+├── Stilovi (CSS):
+│ ├── a.css → Stil za "O nama" stranicu
+│ ├── b.css → Stil za admin sekciju
+│ ├── korpa.css → Stil za prikaz korpe
+│ ├── kupi.css → Stil za checkout stranicu
+│ ├── index.css → Glavni stil sajta
+│ ├── contact.css → Stil za kontakt stranicu
+│ ├── registracija.css → Stil za registraciju
 ---
 
 ## 🛠️ Instalacija

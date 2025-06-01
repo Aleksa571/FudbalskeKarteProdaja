@@ -19,15 +19,42 @@ Ovaj projekat je kompletan **PHP + MySQL sajt** za prodaju fudbalskih karata. Sa
 ## 📂 Struktura projekta
 
 /PhpSqlSajt/
-├── index.php ← Početna strana
-├── register.php ← Registracija korisnika
-├── login.php ← Login forma
-├── admin.php ← Admin panel
-├── korpa.php ← Korpa korisnika
-├── conn.php ← Konekcija sa bazom
-├── baza.sql ← MySQL dump baze (liverpool.sql)
-├── /css/ ← Stilovi
-├── /images/ ← Slike (ako postoje)
+├── index.php ← Početna strana sajta
+├── admin.php ← Admin panel za karte i korisnike
+├── login.php ← Login forma za korisnike
+├── registracija.php ← Forma za registraciju korisnika
+├── ins_registracija.php ← Procesiranje registracije
+├── proveriUser.php ← Proverava korisničke podatke (login backend)
+├── session_checker.php ← Provera sesije (da li je korisnik ulogovan)
+
+├── korpa.php ← Prikaz sadržaja korisničke korpe
+├── ins.php ← Dodavanje karata u korpu
+├── izmeni.php ← Izmena količine u korpi
+├── obrisi.php ← Brisanje pojedinačnih stavki iz korpe
+├── isprazni.php ← Prazni celu korpu
+
+├── kupi.php ← Slanje podataka sa korpe preko Formspree maila
+
+├── conn.php ← Konekcija sa MySQL bazom
+├── liverpool.sql ← Dump baze (importovati u phpMyAdmin)
+
+├── contact.html ← Kontakt stranica (frontend)
+├── about.html ← Stranica "O nama"
+├── logOut.php ← Odjava korisnika
+├── test_sesija.php ← Testiranje sesije / korisničkog pristupa
+
+├── /slike/ ← Folder sa slikama
+├── /vscode/ ← VS Code podešavanja
+├── README.md ← Ovaj dokument
+
+├── Stilovi:
+│ ├── a.css ← Stil za "about" stranicu
+│ ├── b.css ← Stil za admin deo
+│ ├── korpa.css ← Stil za prikaz korpe
+│ ├── kupi.css ← Stil za checkout stranicu
+│ ├── index.css ← Glavni stil sajta
+│ ├── contact.css ← Stil za kontakt stranicu
+│ ├── registracija.css ← Stil za registraciju
 
 ---
 

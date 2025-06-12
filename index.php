@@ -9,7 +9,7 @@ $idKorisnik = $_SESSION['id_korisnika'] ?? null;
 $brojStavki = 0;
 
 if ($idKorisnik) {
-    $stmt = $pdo->prepare("SELECT SUM(kolicina) FROM korpa WHERE id_korisnika = :idKorisnik");
+    $stmt = $pdo->prepare("SELECT SUM(kolicina) FROM korpa WHERE idKorisnik = :idKorisnik");
     $stmt->execute([':idKorisnik' => $idKorisnik]);
     $brojStavki = $stmt->fetchColumn();
     if (!$brojStavki) {
@@ -28,10 +28,6 @@ if ($idKorisnik) {
     <title></title>
 </head>
 <body>
-  Ulogovali ste se kao korisnik sistema.
-    <span>
-        <a href="logOut.php">Log out</a>
-    </span>
     <header>
         <nav>
             <ul class="a">
@@ -40,7 +36,7 @@ if ($idKorisnik) {
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
             <ul class="b">
-                <li><a href="login.php">*LOG IN*</a></li>
+                <li><a href="login.php">*LOG OUT*</a></li>
                 <li>
                   <a href="korpa.php" style="position: relative;">
                     🛒
@@ -87,14 +83,14 @@ if ($idKorisnik) {
         <div class="salah" style="max-width: 250px;">
           <div class="fudbaleri" onclick="openPopup('salah')">
             <img src="slike/salah.jpg" class="card-img-top">
-            <img src="slike/kruna.png" class="plus" style="width: 110px;">
+            <img src="slike/kruna.png" class="plus" style="width: 60px;">
           </div>
         </div>
 
         <div class="steven" style="max-width: 250px;">
           <div class="fudbaleri" onclick="openPopup('steven')">
             <img src="slike/steven.jpg" class="card-img-top">
-            <img src="slike/scope.png" class="plus" style="width: 90px;">
+            <img src="slike/scope.png" class="plus" style="width: 60px;">
           </div>
         </div>
 
@@ -119,7 +115,7 @@ if ($idKorisnik) {
                 <div class="price"><?= number_format($karta['cena'], 2) ?> EUR</div>
             </div>
             <form method="post" action="ins.php">
-                <input type="hidden" name="idKarte" value="<?= $karta['id_karte'] ?>">
+                <input type="hidden" name="idKarte" value="<?= $karta['id'] ?>">
                 <select name="kolicina">
                     <?php for ($i = 1; $i <= $karta['kolicina']; $i++){ ?>
                         <option value="<?= $i ?>"><?= $i ?></option>
@@ -132,59 +128,46 @@ if ($idKorisnik) {
       </select>
   </form>
 </div>
-
     </div>
-
-    <div id="popup_salah" class="popup" onclick="closePopup('popup_salah')">
+      <div id="popup_salah" class="popup" onclick="closePopup('popup_salah')">
         <div class="popup-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closePopup('popup_salah')" style="position:absolute; top:10px; right:15px; font-size:24px; 
-        cursor:pointer;">&times;</span>
-        <img src="Slike/salah.jpg" alt="Mohamed Salah" style="width:200px; height:auto; border-radius:8px; flex-shrink:0;">
-        <div style="flex:1;">
+          <span class="close" onclick="closePopup('popup_salah')">&times;</span>
+          <img src="Slike/salah.jpg" alt="Mohamed Salah" class="profile-img">
+        <div class="tekst-sadrzaj">
           <h1>Salah</h1>
           <p>Mohamed Salah je egipatski fudbaler koji igra kao krilni napadač za Liverpool FC.</p>
-          <p>
-            <a href="https://www.instagram.com/mosalah/"  style="color:#1DA1F2; text-decoration:none; font-weight:bold;">
-              Pogledajte njegov Instagram profil
-            </a>
-          </p>
         </div>
+        <a href="https://www.instagram.com/mosalah/" target="_blank" class="instagram-desno">
+          <img src="slike/instagram.png" alt="Instagram" class="instagram-icon">
+        </a>
       </div>
     </div>      
     <div id="popup_steven" class="popup" onclick="closePopup('popup_steven')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closePopup('popup_steven')" style="position:absolute; top:10px; right:15px; font-size:24px; 
-        cursor:pointer;">&times;</span>
-        <img src="Slike/steven.jpg" alt="Steven Gerrard" style="width:200px; height:auto; border-radius:8px; flex-shrink:0;">
-        
-        <div style="flex:1;">
-          <h1>Steven Gerrard</h1>
-          <p>Legendarni vezista Liverpoola poznat po svojoj lojalnosti i liderstvu.</p>
-          <p>
-            <a href="https://www.instagram.com/stevengerrard/" style="color:#1DA1F2; text-decoration:none; font-weight:bold;">
-              Pogledajte njegov Instagram profil
-            </a>
-          </p>
-        </div>
+      <div class="popup-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closePopup('popup_steven')">&times;</span>
+        <img src="Slike/steven.jpg" alt="Steven Gerrard" class="profile-img">
+      <div class="tekst-sadrzaj">
+        <h1>Steven Gerrard</h1>
+        <p>Legendarni vezista Liverpoola poznat po svojoj lojalnosti i liderstvu.</p>
       </div>
+      <a href="https://www.instagram.com/stevengerrard/" target="_blank" class="instagram-desno">
+        <img src="slike/instagram.png" alt="Instagram" class="instagram-icon">
+      </a>
     </div>
+</div>
     <div id="popup_virgil" class="popup" onclick="closePopup('popup_virgil')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-        <span class="close" onclick="closePopup('popup_virgil')" style="position:absolute; top:10px; right:15px; font-size:24px; 
-        cursor:pointer;">&times;</span>
-        <img src="Slike/virgil.jpg" alt="Virgil van Dijk" style="width:200px; height:auto; border-radius:8px; flex-shrink:0;">
-        <div style="flex:1;">
-          <h1>Virgil van Dijk</h1>
-          <p>Jedan od najboljih defanzivaca na svetu, ključni igrač Liverpoolove odbrane.</p>
-          <p>
-            <a href="https://www.instagram.com/virgilvandijk/" style="color:#1DA1F2; text-decoration:none; font-weight:bold;">
-              Pogledajte njegov Instagram profil
-            </a>
-          </p>
-        </div>
-      </div>
+  <div class="popup-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closePopup('popup_virgil')">&times;</span>
+    <img src="slike/virgil.jpg" alt="Virgil van Dijk" class="profile-img">
+    <div class="tekst-sadrzaj">
+      <h1>Virgil van Dijk</h1>
+      <p>Jedan od najboljih defanzivaca na svetu, ključni igrač Liverpoolove odbrane.</p>
     </div>
-
+    <a href="https://www.instagram.com/virgilvandijk/" target="_blank" class="instagram-desno">
+      <img src="slike/instagram.png" alt="Instagram" class="instagram-icon">
+    </a>
+  </div>
+</div>
     <footer class="footer">
         <div class="footerKlasa">
         <p>© 2025 Liverpool FC. Sva prava zadržana.</p>
